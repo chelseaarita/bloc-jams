@@ -55,6 +55,12 @@
      -moz-box-sizing: border-box;
      box-sizing: border-box; /* we'll explain this in a resource */
  }
+
+.clearfix: after; {
+    content: "";
+    display: table;
+}
+
  
  .point {
      display: table-cell;
@@ -73,4 +79,48 @@
  .ion-iphone {
      color: rgb(233,50,117);
      font-size: 5rem;
+ }
+
+ *, *:before, *:after {
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+ }
+
+ /* Medium screens (640px) */
+ @media (min-width: 40rem) {
+     html { font-size: 112%; }
+ 
+     .column {
+         float: left;
+         padding-left: 1rem;
+         padding-right: 1rem;
+     }
+     
+     .column.full { width: 100%; }
+     .column.two-thirds { width: 66.7%; }
+     .column.half { width: 50%; }
+     .column.third { width: 33.3%; }
+     .column.fourth { width: 25%; }
+     .column.flow-opposite { float: right; }  
+ }
+
+ /* Large screens (1024px) */
+ @media (min-width: 64rem) {
+     html { font-size: 120%; }
+ }
+
+ .container {
+     margin: 0 auto;
+     max-width: 64rem;
+ }
+ 
+ .clearfix:before,
+ .clearfix:after {
+     content: " ";
+     display: table;
+ }
+ 
+ .clearfix:after {
+     clear: both;
  }
