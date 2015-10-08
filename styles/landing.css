@@ -33,9 +33,12 @@
  }
  
  .point {
+<<<<<<< HEAD
      display: table-cell;
      position: relative;
      width: 33.3%;
+=======
+>>>>>>> 9-assignment
      padding: 2rem;
      text-align: center;
  }
