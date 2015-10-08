@@ -1,5 +1,12 @@
+ *, *:before, *:after {
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+ }
+
 html {
-     height: 100%; /* makes sure our HTML takes up 100% of the browser window */
+    height: 100%;
+    font-size: 100%; /* makes sure our HTML takes up 100% of the browser window */
  }
  
  body {
@@ -12,6 +19,35 @@ html {
      background-color: rgb(58,23,63); /* sets the background color to an RGB value (see below) */
  }
 
+ .container {
+     margin: 0 auto;
+     max-width: 64rem;
+ }
+
+
+ /* Medium screens (640px) */
+ @media (min-width: 40rem) {
+     html { font-size: 112%; }
+ 
+.column {
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+     
+     .column.full { width: 100%; }
+     .column.two-thirds { width: 66.7%; }
+     .column.half { width: 50%; }
+     .column.third { width: 33.3%; }
+     .column.fourth { width: 25%; }
+     .column.flow-opposite { float: right; }  
+ }
+
+ /* Large screens (1024px) */
+ @media (min-width: 64rem) {
+     html { font-size: 120%; }
+ }
+
 .navbar {
     position: relative;
     padding: .5rem;
@@ -20,7 +56,15 @@ html {
     /* #2*/
     z-index: 1;
  }
- 
+
+
+ .navbar .logo {
+     position: relative; /* positioning will be explained in a resource */
+     left: 2rem;
+     cursor: pointer;
+
+ }
+
 .navbar .links-container {
     display: table;
     position: absolute;
@@ -48,22 +92,16 @@ html {
     /*#3*/
     text-decoration: none;
     cursor: pointer;
+    
 }
-
 /*#5*/
-.links-container .nav-link: hover {
+.links-container .navbar-link:hover {
     color: rgb(233,50,117);
 }
-.links-container .nav-link: active {
+.links-container .navbar-link:active {
     background-color: white; 
 }
 
- .navbar .logo {
-     position: relative; /* positioning will be explained in a resource */
-     left: 2rem;
-     cursor: pointer;
-
- }
 
  .hero-content {
      position: relative; /* positioning will be explained in a resource */
@@ -124,40 +162,6 @@ html {
      font-size: 5rem;
  }
 
- *, *:before, *:after {
-     -moz-box-sizing: border-box;
-     -webkit-box-sizing: border-box;
-     box-sizing: border-box;
- }
-
- /* Medium screens (640px) */
- @media (min-width: 40rem) {
-     html { font-size: 112%; }
- 
-     .column {
-         float: left;
-         padding-left: 1rem;
-         padding-right: 1rem;
-     }
-     
-     .column.full { width: 100%; }
-     .column.two-thirds { width: 66.7%; }
-     .column.half { width: 50%; }
-     .column.third { width: 33.3%; }
-     .column.fourth { width: 25%; }
-     .column.flow-opposite { float: right; }  
- }
-
- /* Large screens (1024px) */
- @media (min-width: 64rem) {
-     html { font-size: 120%; }
- }
-
- .container {
-     margin: 0 auto;
-     max-width: 64rem;
- }
- 
  .clearfix:before,
  .clearfix:after {
      content: " ";
